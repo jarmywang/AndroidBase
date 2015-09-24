@@ -36,7 +36,7 @@ public class HttpHelper {
         client.addHeader("os", "1");
         client.addHeader("os", "1");
         client.addHeader("os", "1");
-        client.addHeader("os", "1");
+        client.addHeader("os", "12");
         client.setLoggingEnabled(false);
         return client;
     }
