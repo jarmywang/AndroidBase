@@ -17,12 +17,17 @@ public class HttpHelper {
     private static final String contentType = "application/json;charset=UTF-8";
     public static String BASE_URL_DEV = "http://api-test.365hr.com:8030/";
     public static String BASE_URL = "http://api.365hr.com/";
-    private static HttpHelper httpHelper;
+    private volatile static HttpHelper httpHelper;
     private static Context context;
 
+    private HttpHelper (){}
     public static HttpHelper getInstance(Context context) {
-        if (null == httpHelper) {
-            httpHelper = new HttpHelper();
+        if (httpHelper == null) {
+            synchronized (HttpHelper.class) {
+                if (httpHelper == null) {
+                    httpHelper = new HttpHelper();
+                }
+            }
         }
         return httpHelper;
     }
@@ -36,7 +41,6 @@ public class HttpHelper {
         client.addHeader("os", "1");
         client.addHeader("os", "1");
         client.addHeader("os", "1");
-        client.addHeader("os", "12");
         client.setLoggingEnabled(false);
         return client;
     }
