@@ -1,16 +1,25 @@
-package com.commons.support.entity;
+package com.androidbase.entity;
 
 import android.text.TextUtils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
+import com.commons.support.entity.JSONUtil;
+
+import java.util.List;
 
 
 /**
  * Created by qianjin on 2015/4/30.
  */
 public class Result {
+
+//    result: true,
+//    resultcode: "200",
+//    msg: "",
+//    errormsg: ""
+
 
     private boolean result;
 
@@ -41,6 +50,13 @@ public class Result {
             return  dataStr;
         }
         return  0;
+    }
+
+    public Page getPage(Class clazz){
+        Page resultPage = JSONUtil.parseObject(data, Page.class);
+        List list = JSONUtil.parseArray(resultPage.getListStr(), clazz);
+        resultPage.setDataList(list);
+        return resultPage;
     }
 
 
