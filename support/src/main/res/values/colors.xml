@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <color name="lv_press">#ececec</color>
+
+    <color name="gray_white">#cacaca</color>
+    <color name="date_gray">#7c7c7c</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000</color>
+    <color name="thin_black">#666</color>
+
+    <color name="yello">#ff9000</color>
+
+    <color name="bg_color">#eaedf1</color>
+
+    <color name="red">#ff0000</color>
+    <color name="green">#00bb26</color>
+
+
+    <color name="title_bg">#edf4fa</color>
+
+    <color name="bg">#fafafa</color>
+    <color name="title_color">#fb6d0c</color>
+    
+    <color name="gray">#ff777777</color>
+    <color name="line">#f2f2f2</color>
+    <color name="edit_btn_bg">#c3c3c3</color>
+
+    <color name="blue_light">#1c7efb</color>
+    <color name="orange_light">#4ac7f1</color>
+    <color name="btn_bg">#b6ecfe</color>
+
+    <color name="bar_press">#0093ff</color>
+    <color name="main_color">#0093ff</color>
+    <color name="bar_nor">#999999</color>
+
+    <color name="gray_bg_color">#f5f5f5</color>
+    <color name="gray_index_line">#ededed</color>
+
+    <color name="txt_menu_calculator">#db1e02</color>
+    <color name="txt_menu_contrast">#ff8503</color>
+    <color name="txt_menu_search">#23bcdf</color>
+    <color name="txt_menu_pension">#03b85b</color>
+
+    <color name="title_txt">#808080</color>
+
+    <color name="luck_money_red">#f73b18</color>
+    <color name="luck_money_yellow">#feee46</color>
+
+    <color name="split_line">#dcdcdc</color>
+
+    <color name="txt_bg">#e5f4ff</color>
+    <color name="toast_bg">#33a9ff</color>
+    <color name="url">#5984d2</color>
+
+    <color name="compare_bg">#fcf9ea</color>
+    <color name="pension_bg">#c5f1fd</color>
+
+    <color name="blue">#61bbfd</color>
+    <color name="expert_bg">#333333</color>
+
+    <color name="pin_green">#00bb27</color>
+    <color name="pin_gray">#e5e5e5</color>
+
+    <color name="txt_gray">#7b7b7b</color>
+    <color name="expert_desc">#939191</color>
+
+    <color name="bg_blue">#0092ff</color>
+    <color name="bg_avatar">#80c9ff</color>
+    <color name="text_mine_item">#505151</color>
+    <color name="text_mine_item_info">#b7b7b7</color>
+
+</resources>

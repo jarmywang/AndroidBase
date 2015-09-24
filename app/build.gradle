@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+
+
+android {
+
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration.getAt("androidCompileSdkVersion")
+    buildToolsVersion globalConfiguration.getAt("androidBuildToolsVersion")
+
+    defaultConfig {
+        minSdkVersion globalConfiguration.getAt("androidMinSdkVersion")
+        targetSdkVersion globalConfiguration.getAt("androidTargetSdkVersion")
+
+        applicationId globalConfiguration.getAt("androidApplicationId")
+
+        versionCode globalConfiguration.getAt("androidVersionCode")
+        versionName globalConfiguration.getAt("androidVersionName")
+        //testInstrumentationRunner globalConfiguration.getAt("testInstrumentationRunner")
+        //testApplicationId globalConfiguration.getAt("testApplicationId")
+    }
+
+    //签名配置
+    signingConfigs {
+        debug {
+            storeFile file('../buildsystem/debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+
+        release {
+            storeFile file('../buildsystem/debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+
+    }
+
+
+    //编译配置
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "boolean", "API_ENV", "true"
+
+            //是否混淆
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            zipAlignEnabled true;
+            // 移除无用的resource文件
+            shrinkResources true
+        }
+
+        debug {
+
+            signingConfig signingConfigs.debug
+
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "boolean", "API_ENV", "false"
+
+            //是否混淆
+            //minifyEnabled true
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+        }
+    }
+}
+
+dependencies {
+    compile project(':support')
+}

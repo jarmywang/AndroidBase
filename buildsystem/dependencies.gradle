@@ -1,0 +1,38 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+
+    androidApplicationId = 'com.baseandroid.test'
+    androidVersionCode = 1
+    androidVersionName = '1.0'
+
+    //Android
+    androidBuildToolsVersion = '22.0.1'
+    androidMinSdkVersion = 15
+    androidTargetSdkVersion = 21
+    androidCompileSdkVersion = 21
+
+    //app libraries
+    greenDaoVersion = '2.0.0'
+    eventBusVersion = '2.4.0'
+    universalImageLoaderVersion = '1.9.4'
+    androidAsyncHttpVersion = '1.4.8'
+    fastJsonVersion = '1.1.45.android'
+    photoViewVersion = '1.2.3'
+    androidSupportVersion = '22.2.0'
+
+    supportDependencies = [
+            support    : "com.android.support:appcompat-v7:${androidSupportVersion}",
+            greendao   : "de.greenrobot:greendao:${greenDaoVersion}",
+            eventbus   : "de.greenrobot:eventbus:${eventBusVersion}",
+            imageLoader: "com.nostra13.universalimageloader:universal-image-loader:${universalImageLoaderVersion}",
+            asyncHttp  : "com.loopj.android:android-async-http:${androidAsyncHttpVersion}",
+            fastJson   : "com.alibaba:fastjson:${fastJsonVersion}",
+            photoView  : "com.github.chrisbanes.photoview:library:${photoViewVersion}"
+    ]
+
+}
